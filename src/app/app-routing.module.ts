@@ -13,8 +13,8 @@ const routes: Routes = [
     data: {preload: true}
   },
   {
-    path: 'map',
-    loadChildren: () => import('./map/map.module').then(m => m.MapModule)
+    path: 'visualization',
+    loadChildren: () => import('./visualization/visualization.module').then(m => m.VisualizationModule)
   },
   {
     path: '**',

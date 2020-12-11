@@ -1,2 +1,29 @@
-<pre>{{countriesCases | json}}</pre>
-<pre>{{totalCases | json}}</pre>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Country Name</th>
+      <th scope="col">Active Cases</th>
+      <th scope="col">Deaths</th>
+      <th scope="col">Recoveries</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let case of countriesCases">
+      <td>{{case.Country}}</td>
+      <td>{{case.ActiveCases | number}}</td>
+      <td>{{case.TotalDeaths  | number}}</td>
+      <td>{{case.TotalRecovered  | number}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <th>Total Cases:</th>
+      <th>{{totalActiveCases | number}}</th>
+      <th>{{totalDeaths| number}}</th>
+      <th>{{totalRecoveries | number}}</th>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+
