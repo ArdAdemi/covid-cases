@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { VisualizationRoutingModule } from './visualization-routing.module';
 import { VizualizationComponent } from './vizualization/vizualization.component';
-import { ColumnChartComponent } from './column-chart/column-chart.component';
+import { ColumnChartComponent } from './vizualization/column-chart/column-chart.component';
 import {SharedModule} from '../@shared/shared.module';
 
 

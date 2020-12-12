@@ -1,34 +1,34 @@
 <div class="container mt-4" *ngIf="!loader">
   <app-search [countries]="countriesCases" (search)="searchedCountry($event)" class="mb-3"></app-search>
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th scope="col">Country Name</th>
-      <th scope="col">Active Cases</th>
-      <th scope="col">Deaths</th>
-      <th scope="col">Recoveries</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let case of searchedCountries">
-      <td>{{case.Country}}</td>
-      <td>{{case.ActiveCases | number}}</td>
-      <td>{{case.TotalDeaths  | number}}</td>
-      <td>{{case.TotalRecovered  | number}}</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-      <th>Total Cases:</th>
-      <th>{{totalActiveCases | number}}</th>
-      <th>{{totalDeaths| number}}</th>
-      <th>{{totalRecoveries | number}}</th>
-    </tr>
-    </tfoot>
-  </table>
+  <div class="container-fluid pt-4">
+    <div class="row border-bottom text-bold py-3">
+      <div class="col ">Country Name</div>
+      <div class="col-2">Active Cases</div>
+      <div class="col-2">Deaths</div>
+      <div class="col-2">Recoveries</div>
+    </div>
+    <div class="row">
+      <div class="col table-body">
+        <div class="row py-2" *ngFor="let case of searchedCountries; let index = index " [ngClass]="{grayBackground: index% 2 === 1}">
+          <div class="col "> {{case.Country}}</div>
+          <div class="col-2">{{case.ActiveCases | number}}</div>
+          <div class="col-2">{{case.TotalDeaths  | number}}</div>
+          <div class="col-2">{{case.TotalRecovered  | number}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom text-bold py-2 border-top">
+      <div class="col">Total Cases:</div>
+      <div class="col-2">{{totalActiveCases | number}}</div>
+      <div class="col-2">{{totalDeaths| number}}</div>
+      <div class="col-2">{{totalRecoveries | number}}</div>
+    </div>
+
+  </div>
 </div>
 
 <div class="container" *ngIf="loader">
+  //Add Component Loader
   <p class="text-center mt-4">Loading!</p>
 </div>
 

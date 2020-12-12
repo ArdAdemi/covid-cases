@@ -8,3 +8,9 @@
 .cursor-pointer{
   cursor: pointer;
 }
+.text-bold{
+  font-weight: bold;
+}
+.form-control:focus{
+  box-shadow: none;
+}
