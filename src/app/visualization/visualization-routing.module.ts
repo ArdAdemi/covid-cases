@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {VizualizationComponent} from './vizualization/vizualization.component';
+import {VisualizationComponent} from './vizualization/visualization.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: VizualizationComponent
+    component: VisualizationComponent
   }
 ];
 

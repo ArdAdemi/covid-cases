@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
 
   searchedCountry(searchWord): void{
     this.searchedCountries = this.countriesCases.filter(c => {
-      return c['Country'].toLowerCase().includes(searchWord.toLocaleLowerCase());
+      return c.Country.toLowerCase().includes(searchWord.toLocaleLowerCase());
     });
     this.countTotals();
   }

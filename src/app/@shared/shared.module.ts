@@ -4,13 +4,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ActiveCasesPipe } from './pipes/active-cases.pipe';
 import {ChartsModule} from 'ng2-charts';
 import { SearchComponent } from './components/search/search.component';
-import { SearchPipe } from './pipes/search.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
 
 @NgModule({
-  declarations: [NavbarComponent, ActiveCasesPipe, SearchComponent, SearchPipe],
+  declarations: [NavbarComponent, ActiveCasesPipe, SearchComponent],
   imports: [
     CommonModule,
     ChartsModule,
@@ -22,7 +21,6 @@ import {RouterModule} from '@angular/router';
     NavbarComponent,
     ActiveCasesPipe,
     ChartsModule,
-    SearchPipe,
     SearchComponent
   ]
 })

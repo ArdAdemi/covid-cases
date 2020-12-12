@@ -16,7 +16,7 @@ export class ColumnChartComponent implements OnInit {
     responsive: true,
     title: {
       display: true,
-      text: "Covid Cases",
+      text: 'Covid Cases',
       fontSize: 22
     },
     // We use these empty structures as placeholders for dynamic theming.
@@ -36,7 +36,7 @@ export class ColumnChartComponent implements OnInit {
     this.updateChart.subscribe(chartData => {
       this.barChartLabels = chartData.countries;
       this.barChartData = [
-        {data:  chartData.deathCases, label: 'Deaths Cases'},
+        {data: chartData.deathCases, label: 'Deaths Cases'},
         {data: chartData.activeCases, label: 'Active Cases'},
         {data: chartData.recoveredCases, label: 'Recovered Cases'},
         {data: chartData.confirmedCases, label: 'Confirmed Cases'},

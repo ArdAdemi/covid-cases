@@ -5,10 +5,10 @@ import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-vizualization',
-  templateUrl: './vizualization.component.html',
-  styleUrls: ['./vizualization.component.scss']
+  templateUrl: './visualization.component.html',
+  styleUrls: ['./visualization.component.scss']
 })
-export class VizualizationComponent implements OnInit {
+export class VisualizationComponent implements OnInit {
   updateChart: Subject<any> = new Subject();
   countriesCases: Array<Country>;
 

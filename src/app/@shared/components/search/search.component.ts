@@ -24,14 +24,14 @@ export class SearchComponent implements OnInit {
 
   onSearch(searchWord): void {
     this.searchedCountries = this.countries.filter(country => {
-      return country['Country'].toLowerCase().includes(searchWord.toLocaleLowerCase());
+      return country.Country.toLowerCase().includes(searchWord.toLocaleLowerCase());
     });
     this.search.emit(searchWord);
   }
 
   selectedCountry(selectedCountry): void{
-    this.searchCountry = selectedCountry['Country'];
-    this.onSearch(selectedCountry['Country']);
+    this.searchCountry = selectedCountry.Country;
+    this.onSearch(selectedCountry.Country);
     this.showAutoComplete = false;
   }
 
