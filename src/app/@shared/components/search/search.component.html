@@ -3,12 +3,13 @@
     <label for="search-text">Search Country</label>
     <input type="email" class="form-control" id="search-text" aria-describedby="search-text"
            [(ngModel)]="searchCountry" placeholder="Search Country" (ngModelChange)="onSearch($event)"
+           autocomplete="off"
            (focus)="showAutoComplete = true">
   </div>
   <ul class="list-group list-group-flush autocomplete-border position-absolute w-100"
       *ngIf="showAutoComplete && searchCountry.length > 0 ">
     <!-- results of ngFor is passed to appFilter with argument searchText -->
-    <li class="list-group-item" *ngFor="let c of searchedCountries"
+    <li class="list-group-item cursor-pointer" *ngFor="let c of searchedCountries"
         (click)="searchCountry = c['Country']; showAutoComplete = false;onSearch(searchCountry)">
       {{c['Country']}}
     </li>

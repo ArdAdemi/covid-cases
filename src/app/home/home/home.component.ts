@@ -8,7 +8,7 @@ import {Country} from '../../@core/models/Country';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  countries: Array<any>;
+  loader = true;
   countriesCases: Array<Country>;
   searchedCountries: Array<Country>;
   totalActiveCases: number;
@@ -29,9 +29,11 @@ export class HomeComponent implements OnInit {
         this.searchedCountries = this.countriesCases;
         this.setActiveCases();
         this.countTotals();
+        this.loader = false;
       },
       error => {
         console.log(error);
+        this.loader = false;
       }
     );
   }
