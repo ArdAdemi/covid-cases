@@ -1,4 +1,4 @@
-<div class="container mt-4"  *ngIf="!loader">
+<div class="container mt-4" *ngIf="!loader">
   <app-search [countries]="countriesCases" (search)="searchedCountry($event)" class="mb-3"></app-search>
   <table class="table table-striped">
     <thead>
@@ -27,6 +27,7 @@
     </tfoot>
   </table>
 </div>
+
 <div class="container" *ngIf="loader">
   <p class="text-center mt-4">Loading!</p>
 </div>

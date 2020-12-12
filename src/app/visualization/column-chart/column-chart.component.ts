@@ -14,14 +14,14 @@ export class ColumnChartComponent implements OnInit {
 
   public barChartOptions: ChartOptions = {
     responsive: true,
+    title: {
+      display: true,
+      text: "Covid Cases",
+      fontSize: 22
+    },
     // We use these empty structures as placeholders for dynamic theming.
     scales: {xAxes: [{}], yAxes: [{}]},
-    plugins: {
-      datalabels: {
-        anchor: 'end',
-        align: 'end',
-      }
-    }
+
   };
   public barChartLabels: Label[] = [];
   public barChartType: ChartType = 'bar';

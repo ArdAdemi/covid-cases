@@ -63,6 +63,7 @@ export class VizualizationComponent implements OnInit {
       });
     } else {
       this.countriesCases.map(country => {
+
         this.countries.push(country.Country);
         this.deathCases.push(country.TotalDeaths);
         this.activeCases.push(country.ActiveCases);
@@ -76,7 +77,7 @@ export class VizualizationComponent implements OnInit {
       deathCases: this.deathCases,
       activeCases: this.activeCases,
       countries: this.countries,
-      confirmedCases: this.totalCases,
+      confirmedCases: this.confirmedCases,
     });
   }
 
