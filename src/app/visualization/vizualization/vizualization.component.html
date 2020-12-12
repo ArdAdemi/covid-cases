@@ -1,1 +1,10 @@
-<app-column-chart></app-column-chart>
+<div class="container mt-4">
+
+  <app-search
+    [countries]="countriesCases"
+    (search)="prepareDataForTable($event)"
+    class="mb-3"></app-search>
+
+  <app-column-chart class="mt-4" [updateChart]="updateChart"></app-column-chart>
+</div>
+

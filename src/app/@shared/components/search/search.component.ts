@@ -31,7 +31,7 @@ export class SearchComponent implements OnInit {
 
   selectedCountry(selectedCountry): void{
     this.searchCountry = selectedCountry['Country'];
-    this.onSearch(selectedCountry);
+    this.onSearch(selectedCountry['Country']);
     this.showAutoComplete = false;
   }
 
