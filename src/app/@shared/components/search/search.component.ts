@@ -29,4 +29,10 @@ export class SearchComponent implements OnInit {
     this.search.emit(searchWord);
   }
 
+  selectedCountry(selectedCountry): void{
+    this.searchCountry = selectedCountry['Country'];
+    this.onSearch(selectedCountry);
+    this.showAutoComplete = false;
+  }
+
 }
