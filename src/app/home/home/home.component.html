@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container mt-4">
+  <app-search [countries]="countriesCases" (search)="searchedCountry($event)" class="mb-3"></app-search>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -9,7 +10,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let case of countriesCases">
+    <tr *ngFor="let case of searchedCountries">
       <td>{{case.Country}}</td>
       <td>{{case.ActiveCases | number}}</td>
       <td>{{case.TotalDeaths  | number}}</td>

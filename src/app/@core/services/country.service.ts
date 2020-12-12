@@ -14,4 +14,7 @@ export class CountryService {
   getSummary(): Observable<Summary>{
     return this.http.get<Summary>(environment.apiUrl +   '/summary');
   }
+  getCountries(): Observable<any>{
+    return this.http.get<Summary>(environment.apiUrl +   '/countries');
+  }
 }

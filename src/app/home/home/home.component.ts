@@ -8,7 +8,9 @@ import {Country} from '../../@core/models/Country';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  countries: Array<any>;
   countriesCases: Array<Country>;
+  searchedCountries: Array<Country>;
   totalActiveCases: number;
   totalDeaths: number;
   totalRecoveries: number;
@@ -24,6 +26,7 @@ export class HomeComponent implements OnInit {
     this.countryService.getSummary().subscribe(
       countries => {
         this.countriesCases = countries.Countries;
+        this.searchedCountries = this.countriesCases;
         this.setActiveCases();
         this.countTotals();
       },
@@ -33,21 +36,29 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  setActiveCases(): void{
+  setActiveCases(): void {
     this.countriesCases.map(country => {
-      country.ActiveCases = country.TotalConfirmed - country.TotalDeaths - country.TotalRecovered ;
+      country.ActiveCases = country.TotalConfirmed - country.TotalDeaths - country.TotalRecovered;
     });
   }
 
-  countTotals(): void{
+
+  countTotals(): void {
     this.totalActiveCases = 0;
     this.totalDeaths = 0;
-    this.totalRecoveries = 0 ;
-    this.countriesCases.map(country => {
+    this.totalRecoveries = 0;
+    this.searchedCountries.map(country => {
       this.totalActiveCases += country.ActiveCases;
       this.totalDeaths += country.TotalDeaths;
-      this.totalRecoveries += country.TotalConfirmed;
+      this.totalRecoveries += country.TotalRecovered;
     });
+  }
+
+  searchedCountry(searchWord): void{
+    this.searchedCountries = this.countriesCases.filter(c => {
+      return c['Country'].toLowerCase().includes(searchWord.toLocaleLowerCase());
+    });
+    this.countTotals();
   }
 
 }
